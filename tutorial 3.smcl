@@ -1,0 +1,303 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/zm/Desktop/tutorial 3.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}11 Apr 2017, 16:07:19
+
+{com}. sum whrs, de
+
+                    {txt}Wife's hours of work
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}        250
+{txt}25%    {res}        0              0       {txt}Sum of Wgt. {res}        250
+
+{txt}50%    {res}    406.5                      {txt}Mean          {res}   799.84
+                        {txt}Largest       Std. Dev.     {res} 915.6035
+{txt}75%    {res}     1600           3087
+{txt}90%    {res}     2000           3640       {txt}Variance      {res} 838329.7
+{txt}95%    {res}     2100           4210       {txt}Skewness      {res} 1.065335
+{txt}99%    {res}     3640           4950       {txt}Kurtosis      {res} 4.139777
+
+{com}. sum whrs
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}whrs {c |}{res}        250      799.84    915.6035          0       4950
+
+{com}. idensity whrs
+{err}command {bf}idensity{sf} is unrecognized
+{txt}{search r(199):r(199);}
+
+{com}. identity whrs
+{err}command {bf}identity{sf} is unrecognized
+{txt}{search r(199):r(199);}
+
+{com}. kdensity whrs
+{res}
+{com}. kdensity whrs, normal
+{res}
+{com}. reg whrs kl6 k618 wa we
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       250
+{txt}{hline 13}{c +}{hline 34}   F(4, 245)       = {res}     5.27
+{txt}       Model {c |} {res} 16526046.1         4  4131511.52   {txt}Prob > F        ={res}    0.0004
+{txt}    Residual {c |} {res}  192218058       245    784563.5   {txt}R-squared       ={res}    0.0792
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0641
+{txt}       Total {c |} {res}  208744104       249  838329.733   {txt}Root MSE        =   {res} 885.76
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        whrs{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}kl6 {c |}{col 14}{res}{space 2}-462.1233{col 26}{space 2} 124.6768{col 37}{space 1}   -3.71{col 46}{space 3}0.000{col 54}{space 4}-707.6985{col 67}{space 3}-216.5481
+{txt}{space 8}k618 {c |}{col 14}{res}{space 2}  -91.141{col 26}{space 2} 45.85001{col 37}{space 1}   -1.99{col 46}{space 3}0.048{col 54}{space 4}-181.4515{col 67}{space 3}-.8305151
+{txt}{space 10}wa {c |}{col 14}{res}{space 2} -13.1577{col 26}{space 2} 8.334958{col 37}{space 1}   -1.58{col 46}{space 3}0.116{col 54}{space 4}-29.57502{col 67}{space 3} 3.259612
+{txt}{space 10}we {c |}{col 14}{res}{space 2} 53.26156{col 26}{space 2} 26.09369{col 37}{space 1}    2.04{col 46}{space 3}0.042{col 54}{space 4} 1.864986{col 67}{space 3} 104.6581
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 940.0593{col 26}{space 2} 530.7197{col 37}{space 1}    1.77{col 46}{space 3}0.078{col 54}{space 4} -105.296{col 67}{space 3} 1985.415
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. logit whrs kl6 k618 wa we
+
+{res}{txt}Iteration 0:{space 3}log likelihood = {res:-168.25292}  
+Iteration 1:{space 3}log likelihood = {res: -159.5699}  
+Iteration 2:{space 3}log likelihood = {res:-159.53353}  
+Iteration 3:{space 3}log likelihood = {res:-159.53353}  
+{res}
+{txt}Logistic regression{col 49}Number of obs{col 67}= {res}       250
+{txt}{col 49}LR chi2({res}4{txt}){col 67}= {res}     17.44
+{txt}{col 49}Prob > chi2{col 67}= {res}    0.0016
+{txt}Log likelihood = {res}-159.53353{txt}{col 49}Pseudo R2{col 67}= {res}    0.0518
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        whrs{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}kl6 {c |}{col 14}{res}{space 2}-.9499934{col 26}{space 2} .3130951{col 37}{space 1}   -3.03{col 46}{space 3}0.002{col 54}{space 4}-1.563649{col 67}{space 3}-.3363382
+{txt}{space 8}k618 {c |}{col 14}{res}{space 2}-.1227964{col 26}{space 2} .1112984{col 37}{space 1}   -1.10{col 46}{space 3}0.270{col 54}{space 4}-.3409374{col 67}{space 3} .0953445
+{txt}{space 10}wa {c |}{col 14}{res}{space 2} -.038912{col 26}{space 2} .0207145{col 37}{space 1}   -1.88{col 46}{space 3}0.060{col 54}{space 4}-.0795116{col 67}{space 3} .0016876
+{txt}{space 10}we {c |}{col 14}{res}{space 2} .1751837{col 26}{space 2} .0653449{col 37}{space 1}    2.68{col 46}{space 3}0.007{col 54}{space 4} .0471101{col 67}{space 3} .3032573
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .3275662{col 26}{space 2} 1.294671{col 37}{space 1}    0.25{col 46}{space 3}0.800{col 54}{space 4}-2.209942{col 67}{space 3} 2.865074
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. scalar m1 = e(ll)
+
+. tobit whrs kl6 k618 wa we
+{err}must specify at least one of ll() or ul()
+{txt}{search r(198):r(198);}
+
+{com}. est store modl
+
+. tobit whrs kl6 k618 wa we
+{err}must specify at least one of ll() or ul()
+{txt}{search r(198):r(198);}
+
+{com}. tobit whrs kl6 k618 wa we, ll(0)/* ll[()］
+{err}option {bf:ll()} incorrectly specified
+{txt}{search r(198):r(198);}
+
+{com}. tobit whrs kl6 k618 wa we, ll(0)
+{res}
+{txt}Tobit regression{col 49}Number of obs{col 67}= {res}       250
+{txt}{col 49}LR chi2({res}4{txt}){col 67}= {res}     23.03
+{txt}{col 49}Prob > chi2{col 67}= {res}    0.0001
+{txt}Log likelihood = {res}-1367.0903{txt}{col 49}Pseudo R2{col 67}= {res}    0.0084
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        whrs{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}kl6 {c |}{col 14}{res}{space 2}-827.7657{col 26}{space 2} 214.7407{col 37}{space 1}   -3.85{col 46}{space 3}0.000{col 54}{space 4}-1250.731{col 67}{space 3}-404.8008
+{txt}{space 8}k618 {c |}{col 14}{res}{space 2}-140.0192{col 26}{space 2} 74.22303{col 37}{space 1}   -1.89{col 46}{space 3}0.060{col 54}{space 4}-286.2129{col 67}{space 3} 6.174547
+{txt}{space 10}wa {c |}{col 14}{res}{space 2}-24.97919{col 26}{space 2} 13.25639{col 37}{space 1}   -1.88{col 46}{space 3}0.061{col 54}{space 4}-51.08969{col 67}{space 3} 1.131317
+{txt}{space 10}we {c |}{col 14}{res}{space 2} 103.6896{col 26}{space 2} 41.82393{col 37}{space 1}    2.48{col 46}{space 3}0.014{col 54}{space 4} 21.31093{col 67}{space 3} 186.0683
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 589.0001{col 26}{space 2} 841.5467{col 37}{space 1}    0.70{col 46}{space 3}0.485{col 54}{space 4}-1068.556{col 67}{space 3} 2246.556
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+      /sigma {c |}{col 14}{res}{space 2} 1309.909{col 26}{space 2} 82.73335{col 54}{space 4} 1146.953{col 67}{space 3} 1472.865
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}           100{txt}  left-censored observations at whrs <= {res}0
+           150{txt}     uncensored observations
+{res}             0{txt} right-censored observations
+
+{com}. est store mod2
+
+. regress
+{err}last estimates not found
+{txt}{search r(301):r(301);}
+
+{com}. regress k618 whrs kl6 wa we if whrs>0
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       150
+{txt}{hline 13}{c +}{hline 34}   F(4, 145)       = {res}     9.55
+{txt}       Model {c |} {res} 57.1823791         4  14.2955948   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 217.090954       145    1.497179   {txt}R-squared       ={res}    0.2085
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.1867
+{txt}       Total {c |} {res} 274.273333       149  1.84076063   {txt}Root MSE        =   {res} 1.2236
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        k618{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}whrs {c |}{col 14}{res}{space 2}-.0002392{col 26}{space 2} .0001241{col 37}{space 1}   -1.93{col 46}{space 3}0.056{col 54}{space 4}-.0004845{col 67}{space 3} 6.05e-06
+{txt}{space 9}kl6 {c |}{col 14}{res}{space 2}-.4850234{col 26}{space 2} .2565157{col 37}{space 1}   -1.89{col 46}{space 3}0.061{col 54}{space 4}-.9920162{col 67}{space 3} .0219695
+{txt}{space 10}wa {c |}{col 14}{res}{space 2}-.0757706{col 26}{space 2} .0132599{col 37}{space 1}   -5.71{col 46}{space 3}0.000{col 54}{space 4}-.1019784{col 67}{space 3}-.0495629
+{txt}{space 10}we {c |}{col 14}{res}{space 2}-.0109706{col 26}{space 2}  .047279{col 37}{space 1}   -0.23{col 46}{space 3}0.817{col 54}{space 4}-.1044156{col 67}{space 3} .0824745
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 5.096945{col 26}{space 2}   .85402{col 37}{space 1}    5.97{col 46}{space 3}0.000{col 54}{space 4} 3.409009{col 67}{space 3} 6.784881
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. est store mod3
+
+. truncreg whrs kl6 k618 wa we, ll(0)
+{txt}(note: 100 obs. truncated)
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-1205.6992}  
+Iteration 1:{space 3}log likelihood = {res:-1200.9873}  
+Iteration 2:{space 3}log likelihood = {res:-1200.9159}  
+Iteration 3:{space 3}log likelihood = {res:-1200.9157}  
+Iteration 4:{space 3}log likelihood = {res:-1200.9157}  
+{res}
+{txt}Truncated regression
+Limit:   lower = {res}         0{txt}{col 49}Number of obs{col 67}= {res}       150
+         {txt}upper = {res}      +inf{col 49}{txt}Wald chi2({res}4{txt}){col 67}= {res}     10.05
+{txt}Log likelihood = {res}-1200.9157{col 49}{txt}Prob > chi2{col 67}= {res}    0.0395
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        whrs{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}kl6 {c |}{col 14}{res}{space 2}-803.0042{col 26}{space 2} 321.3614{col 37}{space 1}   -2.50{col 46}{space 3}0.012{col 54}{space 4}-1432.861{col 67}{space 3}-173.1474
+{txt}{space 8}k618 {c |}{col 14}{res}{space 2} -172.875{col 26}{space 2} 88.72898{col 37}{space 1}   -1.95{col 46}{space 3}0.051{col 54}{space 4}-346.7806{col 67}{space 3} 1.030579
+{txt}{space 10}wa {c |}{col 14}{res}{space 2}-8.821123{col 26}{space 2} 14.36848{col 37}{space 1}   -0.61{col 46}{space 3}0.539{col 54}{space 4}-36.98283{col 67}{space 3} 19.34059
+{txt}{space 10}we {c |}{col 14}{res}{space 2} 16.52873{col 26}{space 2} 46.50375{col 37}{space 1}    0.36{col 46}{space 3}0.722{col 54}{space 4}-74.61695{col 67}{space 3} 107.6744
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  1586.26{col 26}{space 2}  912.355{col 37}{space 1}    1.74{col 46}{space 3}0.082{col 54}{space 4}-201.9234{col 67}{space 3} 3374.442
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+      /sigma {c |}{col 14}{res}{space 2} 983.7262{col 26}{space 2} 94.44303{col 37}{space 1}   10.42{col 46}{space 3}0.000{col 54}{space 4} 798.6213{col 67}{space 3} 1168.831
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. est store mod4
+
+. esttab modl mod2 mod3 mod4,abs
+{err}command {bf}esttab{sf} is unrecognized
+{txt}{search r(199):r(199);}
+
+{com}. findit esttab
+
+. esttab modl mod2 mod3 mod4,abs
+{err}command {bf}esttab{sf} is unrecognized
+{txt}{search r(199):r(199);}
+
+{com}. findit esttab
+
+. esttab modl mod2 mod3 mod4, abs
+{res}
+{txt}{hline 76}
+{txt}                      (1)             (2)             (3)             (4)   
+{txt}                     whrs            whrs            k618            whrs   
+{txt}{hline 76}
+{res}main                                                                        {txt}
+{txt}kl6         {res}       -0.950**        -827.8***       -0.485          -803.0*  {txt}
+            {res} {ralign 12:{txt:(}3.03{txt:)}}    {ralign 12:{txt:(}3.85{txt:)}}    {ralign 12:{txt:(}1.89{txt:)}}    {ralign 12:{txt:(}2.50{txt:)}}   {txt}
+
+{txt}k618        {res}       -0.123          -140.0                          -172.9   {txt}
+            {res} {ralign 12:{txt:(}1.10{txt:)}}    {ralign 12:{txt:(}1.89{txt:)}}                    {ralign 12:{txt:(}1.95{txt:)}}   {txt}
+
+{txt}wa          {res}      -0.0389          -24.98         -0.0758***       -8.821   {txt}
+            {res} {ralign 12:{txt:(}1.88{txt:)}}    {ralign 12:{txt:(}1.88{txt:)}}    {ralign 12:{txt:(}5.71{txt:)}}    {ralign 12:{txt:(}0.61{txt:)}}   {txt}
+
+{txt}we          {res}        0.175**         103.7*        -0.0110           16.53   {txt}
+            {res} {ralign 12:{txt:(}2.68{txt:)}}    {ralign 12:{txt:(}2.48{txt:)}}    {ralign 12:{txt:(}0.23{txt:)}}    {ralign 12:{txt:(}0.36{txt:)}}   {txt}
+
+{txt}whrs        {res}                                    -0.000239                   {txt}
+            {res}                                 {ralign 12:{txt:(}1.93{txt:)}}                   {txt}
+
+{txt}_cons       {res}        0.328           589.0           5.097***       1586.3   {txt}
+            {res} {ralign 12:{txt:(}0.25{txt:)}}    {ralign 12:{txt:(}0.70{txt:)}}    {ralign 12:{txt:(}5.97{txt:)}}    {ralign 12:{txt:(}1.74{txt:)}}   {txt}
+{hline 76}
+{res}sigma                                                                       {txt}
+{txt}_cons       {res}                       1309.9***                        983.7***{txt}
+            {res}                 {ralign 12:{txt:(}15.83{txt:)}}                    {ralign 12:{txt:(}10.42{txt:)}}   {txt}
+{txt}{hline 76}
+{txt}N           {res}          250             250             150             150   {txt}
+{txt}{hline 76}
+{txt}Absolute t statistics in parentheses
+{txt}* p<0.05, ** p<0.01, *** p<0.001
+
+{com}. esttab modl mod2 mod3 mod4 using tobitreg.rtf, label
+{res}{txt}(output written to {browse  `"tobitreg.rtf"'})
+
+{com}. title(models comparison)
+{err}command {bf}title{sf} is unrecognized
+{txt}{search r(199):r(199);}
+
+{com}. esttab modl mod2 mod3 mod4 using tobitreg.rtf, label ///
+{err}option {bf:/} not allowed
+{txt}{search r(198):r(198);}
+
+{com}. title (Models comparison)
+{err}command {bf}title{sf} is unrecognized
+{txt}{search r(199):r(199);}
+
+{com}. eststo clear
+
+. qui tobit whrs kl6 k618 wa we, 11(0)
+{err}must specify at least one of ll() or ul()
+{txt}{search r(198):r(198);}
+
+{com}. qui tobit whrs kl6 k618 wa we, ll(0)
+
+. margins, dydz(*) predict(e(0,1))
+{err}option {bf:dydz()} not allowed
+{txt}{search r(198):r(198);}
+
+{com}. margins, dydx(*) predict(e(0,1))
+{res}
+{txt}Average marginal effects{col 49}Number of obs{col 67}= {res}       250
+{txt}Model VCE{col 14}: {res}OIM
+
+{txt}{p2colset 1 14 16 2}{...}
+{p2col:Expression}:{space 1}{res:E(whrs|0<whrs<1), predict(e(0,1))}{p_end}
+{p2colreset}{...}
+{txt}{p2colset 1 14 16 2}{...}
+{p2col:dy/dx w.r.t.}:{space 1}{res:kl6 k618 wa we}{p_end}
+{p2colreset}{...}
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26} Delta-method
+{col 14}{c |}      dy/dx{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}kl6 {c |}{col 14}{res}{space 2}-.0000401{col 26}{space 2} .0000104{col 37}{space 1}   -3.86{col 46}{space 3}0.000{col 54}{space 4}-.0000605{col 67}{space 3}-.0000197
+{txt}{space 8}k618 {c |}{col 14}{res}{space 2}-6.78e-06{col 26}{space 2} 3.59e-06{col 37}{space 1}   -1.89{col 46}{space 3}0.059{col 54}{space 4}-.0000138{col 67}{space 3} 2.59e-07
+{txt}{space 10}wa {c |}{col 14}{res}{space 2}-1.21e-06{col 26}{space 2} 6.42e-07{col 37}{space 1}   -1.89{col 46}{space 3}0.059{col 54}{space 4}-2.47e-06{col 67}{space 3} 4.80e-08
+{txt}{space 10}we {c |}{col 14}{res}{space 2} 5.02e-06{col 26}{space 2} 2.03e-06{col 37}{space 1}    2.48{col 46}{space 3}0.013{col 54}{space 4} 1.05e-06{col 67}{space 3} 8.99e-06
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. margins, dydx(*) predict(e(0,1))
+{res}
+{txt}Average marginal effects{col 49}Number of obs{col 67}= {res}       250
+{txt}Model VCE{col 14}: {res}OIM
+
+{txt}{p2colset 1 14 16 2}{...}
+{p2col:Expression}:{space 1}{res:E(whrs|0<whrs<1), predict(e(0,1))}{p_end}
+{p2colreset}{...}
+{txt}{p2colset 1 14 16 2}{...}
+{p2col:dy/dx w.r.t.}:{space 1}{res:kl6 k618 wa we}{p_end}
+{p2colreset}{...}
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26} Delta-method
+{col 14}{c |}      dy/dx{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}kl6 {c |}{col 14}{res}{space 2}-.0000401{col 26}{space 2} .0000104{col 37}{space 1}   -3.86{col 46}{space 3}0.000{col 54}{space 4}-.0000605{col 67}{space 3}-.0000197
+{txt}{space 8}k618 {c |}{col 14}{res}{space 2}-6.78e-06{col 26}{space 2} 3.59e-06{col 37}{space 1}   -1.89{col 46}{space 3}0.059{col 54}{space 4}-.0000138{col 67}{space 3} 2.59e-07
+{txt}{space 10}wa {c |}{col 14}{res}{space 2}-1.21e-06{col 26}{space 2} 6.42e-07{col 37}{space 1}   -1.89{col 46}{space 3}0.059{col 54}{space 4}-2.47e-06{col 67}{space 3} 4.80e-08
+{txt}{space 10}we {c |}{col 14}{res}{space 2} 5.02e-06{col 26}{space 2} 2.03e-06{col 37}{space 1}    2.48{col 46}{space 3}0.013{col 54}{space 4} 1.05e-06{col 67}{space 3} 8.99e-06
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/zm/Desktop/tutorial 3.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}11 Apr 2017, 17:10:15
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
